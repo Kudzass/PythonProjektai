@@ -720,16 +720,33 @@
 #
 # print('---------------------------------------------------')
 
-print('-------1 UŽDUOTIS: "Pasveikink 3 kartus"-----------')
-def sveikink():
-    for _ in range(3):
-        print("Labas!")
+# print('-------1 UŽDUOTIS: "Pasveikink 3 kartus"-----------')
+# def sveikink():
+#     for _ in range(3):
+#         print("Labas!")
+#
+# sveikink()
+#
+# print('-----------2 UŽDUOTIS: "Argumentai ir return"--------------')
+# def sudaugink(x, y):
+#     return x * y
+#
+# rezultatas = sudaugink(5, 10)
+# print("Sandauga:", rezultatas)
 
-sveikink()
+print('----------3 UŽDUOTIS: Funkcijos su keliais argumentais-----------------------------')
 
-print('-----------2 UŽDUOTIS: "Argumentai ir return"--------------')
-def sudaugink(x, y):
-    return x * y
+def trys_sveikinimai(vardas1, vardas2, vardas3):
+    print(f"Labas, {vardas1}!")
+    print(f"Labas, {vardas2}!")
+    print(f"Labas, {vardas3}!")
 
-rezultatas = sudaugink(5, 10)
-print("Sandauga:", rezultatas)
+trys_sveikinimai("Jonas", "Asta", "Mantas")
+
+print('---------4 UŽDUOTIS: Numatytosios reikšmės ir keyword metodai-----------------------')
+
+def sveikink_su_pavadinimu(vardas, pavadinimas="drauge"):
+    print(f"Sveikas, {vardas}! Ką veiki, {pavadinimas}?")
+
+sveikink_su_pavadinimu("Jonas")
+sveikink_su_pavadinimu("Asta", "kolega")
