@@ -726,3 +726,10 @@ def sveikink():
         print("Labas!")
 
 sveikink()
+
+print('-----------2 UŽDUOTIS: "Argumentai ir return"--------------')
+def sudaugink(x, y):
+    return x * y
+
+rezultatas = sudaugink(5, 10)
+print("Sandauga:", rezultatas)
