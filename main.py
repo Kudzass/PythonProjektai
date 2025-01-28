@@ -834,13 +834,60 @@
 #
 # print(sq(625))
 # print(sin(90))
+#
+# from matematika import sudetis, daugyba
+#
+# a, b = 10, 5
+# suma = sudetis(a, b)
+# sandauga = daugyba(a, b)
+#
+# print(f"{a} + {b} = {suma}")
+# print(f"{a} * {b} = {sandauga}")
+print('--------------11: Sukurti FOLDER ir importuoti------------------')
 
-from matematika import sudetis, daugyba
+import moduliai.aritmetika
 
-a, b = 10, 5
-suma = sudetis(a, b)
-sandauga = daugyba(a, b)
+skirtumas = moduliai.aritmetika.atimtis(15, 5)
+dalmuo = moduliai.aritmetika.dalyba(20, 4)
 
-print(f"{a} + {b} = {suma}")
-print(f"{a} * {b} = {sandauga}")
+print("15 - 5 =", skirtumas)
+print("20 / 4 =", dalmuo)
+
+print('--------------12: Modulio importavimas iš FOLDER------------------')
+
+import moduliai.aritmetika
+
+skirtumas = moduliai.aritmetika.atimtis(20, 5)
+dalmuo = moduliai.aritmetika.dalyba(10, 2)
+
+print("20 - 5 =", skirtumas)
+print("10 / 2 =", dalmuo)
+
+print('--------------13: Spec funkcijų importas iš FOLDER------------------')
+
+from moduliai.aritmetika import atimtis, dalyba
+
+skirtumas = atimtis(50, 25)
+dalmuo = dalyba(100, 4)
+
+print("50 - 25 =", skirtumas)
+print("100 / 4 =", dalmuo)
+
+print('--------------14: Modulio trumpinimas naudojant ALIAS------------------')
+
+import moduliai.aritmetika as ar
+
+skirtumas = ar.atimtis(30, 10)
+dalmuo = ar.dalyba(50, 5)
+
+print("30 - 10 =", skirtumas)
+print("50 / 5 =", dalmuo)
+
+print('--------------15: FOLDER IMPORT------------------')
+
+import moduliai
+
+skirtumas = moduliai.atimtis(15, 5)
+
+print("15 - 5 =", skirtumas)
 
