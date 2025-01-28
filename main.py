@@ -791,16 +791,56 @@
 #
 # print(prideti_zodi("Labas, pasauli!", "kaip sekasi?"))
 
-import random
+# import random
+#
+# print('---------1: atsitiktinis skaičius nuo 1-10 -------------------------')
+# sveikas_skaicius = random.randint(1, 100)
+# print("Atsitiktinis sveikasis skaičius:", sveikas_skaicius)
+#
+# print('---------2: atsitiktinis skaičius po kablelio nuo 1-50--------------')
+# skaicius_po_kablelio = random.uniform(1, 50)
+# print("Atsitiktinis skaičius:", skaicius_po_kablelio)
+#
+# print('---------3: ispauzdina abu variantus--------------------------------')
+# print(f"Atsitiktinis sveikasis skaičius: {sveikas_skaicius}")
+# print(f"Atsitiktinis skaičius: {skaicius_po_kablelio:.2f}")
 
-print('---------1: atsitiktinis skaičius nuo 1-10 -------------------------')
-sveikas_skaicius = random.randint(1, 100)
-print("Atsitiktinis sveikasis skaičius:", sveikas_skaicius)
+# print('3: UŽDUOTIS')
+#
+# from random import randint, choice
+#
+# print('------------1: atsitiktinis skaičius---------------------------')
+#
+# atsitiktinis_skaicius = randint(1, 10)
+# print("Atsitiktinis skaičius:", atsitiktinis_skaicius)
+#
+# print('------------2: atsitiktinis žodis iš sarašo--------------------')
+#
+# vaisiai = ['obuolys', 'bananas', 'kriaušė', 'vyšnia']
+# atsitiktinis_vaisius = choice(vaisiai)
+# print("Atsitiktinis vaisius:", atsitiktinis_vaisius)
+#
+# print('4: UŽDUOTIS')
+#
+# import datetime as dt
+# from random import randint, choice
+#
+# print(randint(1, 10))
+# print(choice(['obuolys', 'bananas', 'kriaušė', 'vyšnia']))
+# print(dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+#
+# from mafrom math import *
+# from math import sqrt as sq
+#
+# print(sq(625))
+# print(sin(90))
 
-print('---------2: atsitiktinis skaičius po kablelio nuo 1-50--------------')
-skaicius_po_kablelio = random.uniform(1, 50)
-print("Atsitiktinis skaičius:", skaicius_po_kablelio)
+from matematika import sudetis, daugyba
 
-print('---------3: ispauzdina abu variantus--------------------------------')
-print(f"Atsitiktinis sveikasis skaičius: {sveikas_skaicius}")
-print(f"Atsitiktinis skaičius: {skaicius_po_kablelio:.2f}")
+a, b = 10, 5
+suma = sudetis(a, b)
+sandauga = daugyba(a, b)
+
+print(f"{a} + {b} = {suma}")
+print(f"{a} * {b} = {sandauga}")
+
