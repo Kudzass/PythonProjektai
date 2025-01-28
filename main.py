@@ -734,19 +734,73 @@
 # rezultatas = sudaugink(5, 10)
 # print("Sandauga:", rezultatas)
 
-print('----------3 UŽDUOTIS: Funkcijos su keliais argumentais-----------------------------')
+# print('----------3 UŽDUOTIS: Funkcijos su keliais argumentais-----------------------------')
+#
+# def trys_sveikinimai(vardas1, vardas2, vardas3):
+#     print(f"Labas, {vardas1}!")
+#     print(f"Labas, {vardas2}!")
+#     print(f"Labas, {vardas3}!")
+#
+# trys_sveikinimai("Jonas", "Asta", "Mantas")
+#
+# print('---------4 UŽDUOTIS: Numatytosios reikšmės ir keyword metodai-----------------------')
+#
+# def sveikink_su_pavadinimu(vardas, pavadinimas="drauge"):
+#     print(f"Sveikas, {vardas}! Ką veiki, {pavadinimas}?")
+#
+# sveikink_su_pavadinimu("Jonas")
+# sveikink_su_pavadinimu("Asta", "kolega")
+#
+# def skaiciuoti_sumos_tipa(x: int, y: int, tik_teigiama=False) -> int:
+#     suma = x + y
+#     if tik_teigiama:
+#         return max(suma, 0)
+#     return suma
+#
+# print(skaiciuoti_sumos_tipa(5, 3))
+# print(skaiciuoti_sumos_tipa(5, -30, True))
+#
+# def apskaiciuok_vidurki(skaiciai):
+#     """
+#     Apskaičiuoja ir grąžina sąrašo skaičių vidurkį.
+#
+#     Argumentai:
+#     skaiciai (list): Sąrašas skaičių.
+#
+#     Grąžinama reikšmė:
+#     float: Skaičių vidurkis.
+#     """
+#     if not skaiciai:
+#         return 0  # Jei sąrašas tuščias, grąžiname 0
+#     return sum(skaiciai) / len(skaiciai)
+#
+# print(apskaiciuok_vidurki([1, 2, 3, 4, 5]))
+#
+# def prideti_zodi(tekstas: str, zodis: str) -> str:
+#     """
+#     Prideda žodį prie sakinio galo.
+#
+#     Argumentai:
+#     tekstas (str): Pradinis sakinys.
+#     zodis (str): Žodis, kurį reikia pridėti.
+#
+#     Grąžinama reikšmė:
+#     str: Atnaujintas sakinys su pridėtu žodžiu gale.
+#     """
+#     return tekstas + " " + zodis
+#
+# print(prideti_zodi("Labas, pasauli!", "kaip sekasi?"))
 
-def trys_sveikinimai(vardas1, vardas2, vardas3):
-    print(f"Labas, {vardas1}!")
-    print(f"Labas, {vardas2}!")
-    print(f"Labas, {vardas3}!")
+import random
 
-trys_sveikinimai("Jonas", "Asta", "Mantas")
+print('---------1: atsitiktinis skaičius nuo 1-10 -------------------------')
+sveikas_skaicius = random.randint(1, 100)
+print("Atsitiktinis sveikasis skaičius:", sveikas_skaicius)
 
-print('---------4 UŽDUOTIS: Numatytosios reikšmės ir keyword metodai-----------------------')
+print('---------2: atsitiktinis skaičius po kablelio nuo 1-50--------------')
+skaicius_po_kablelio = random.uniform(1, 50)
+print("Atsitiktinis skaičius:", skaicius_po_kablelio)
 
-def sveikink_su_pavadinimu(vardas, pavadinimas="drauge"):
-    print(f"Sveikas, {vardas}! Ką veiki, {pavadinimas}?")
-
-sveikink_su_pavadinimu("Jonas")
-sveikink_su_pavadinimu("Asta", "kolega")
+print('---------3: ispauzdina abu variantus--------------------------------')
+print(f"Atsitiktinis sveikasis skaičius: {sveikas_skaicius}")
+print(f"Atsitiktinis skaičius: {skaicius_po_kablelio:.2f}")
