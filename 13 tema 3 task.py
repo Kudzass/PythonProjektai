@@ -4,10 +4,17 @@ locale.setlocale(locale.LC_TIME, 'lt_LT.UTF-8')
 
 print("---------Užduotis 5: Datos ir laiko įvedimas naudojant str formatą-----------")
 
-user_input = input("Įveskite datą (YYYY-MM-DD): ")
-input_date = datetime.datetime.strptime(user_input, "%Y-%m-%d")
+while True:
+    try:
+        user_input = input("Įveskite datą (YYYY-MM-DD): ")
+        input_date = datetime.datetime.strptime(user_input, "%Y-%m-%d")
 
-print("Jūsų įvesta data datetime formatu:", input_date)
+        print("Jūsų įvesta data datetime formatu:", input_date)
+
+        break
+    except ValueError:
+
+        print("Klaida: įvestis neteisinga! Įveskite datą formatu 'YYYY-MM-DD'.")
 
 print("---------Užduotis 6: Datos ir laiko išvedimas naudojant strftime formatą------")
 
