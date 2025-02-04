@@ -27,4 +27,4 @@ time_difference = current_date - date1
 
 print("Dienų skaičius:", time_difference.days)
 print("Valandų skaičius:", time_difference.seconds // 3600)
-print("Bendras sekundžių skaičius:", time_difference.total_seconds())
+print("Bendras sekundžių skaičius:", int(time_difference.total_seconds()))
