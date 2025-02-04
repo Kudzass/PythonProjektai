@@ -29,7 +29,7 @@ book2 = Book("1984", "George Orwell", 1949)
 print(f"Knyga '{book1.title}' yra {book1.get_book_age()} metų senumo.")
 print(f"Knyga '{book2.title}' yra {book2.get_book_age()} metų senumo.")
 
-print('-------------------Užduotis 6: Metodų iškvietimas ir rezultatų naudojimas--------------')
+print('-------------------Užduotis 6 : Metodų iškvietimas ir rezultatų naudojimas--------------')
 
 from datetime import datetime
 
