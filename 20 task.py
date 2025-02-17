@@ -36,7 +36,7 @@ class Mokytojas(Asmuo):
 
 def log_decorator(func):
     def wrapper(*args, **kwargs):
-        print("Vykdoma operacija...")
+        print(f"Vykdoma operacija: {func.__name__}...")
         return func(*args, **kwargs)
     return wrapper
 
@@ -51,11 +51,51 @@ def prideti_mokini(vardas, pavarde, klase, vidurkis):
         print("Klaida pridedant mokinį:", e)
 
 @log_decorator
+def prideti_mokytoja(vardas, pavarde, dalykas):
+    try:
+        cursor.execute("INSERT INTO mokytojai (vardas, pavarde, dalykas) VALUES (?, ?, ?)",
+                       (vardas, pavarde, dalykas))
+        conn.commit()
+        print("Mokytojas pridėtas!")
+    except sqlite3.Error as e:
+        print("Klaida pridedant mokytoją:", e)
+
+@log_decorator
 def rodyti_mokinius():
     cursor.execute("SELECT * FROM mokiniai")
     mokiniai = cursor.fetchall()
     for m in mokiniai:
         print(m)
+
+@log_decorator
+def ieskoti_mokinio(vardas, pavarde):
+    try:
+        cursor.execute("SELECT * FROM mokiniai WHERE vardas = ? AND pavarde = ?", (vardas, pavarde))
+        mokinys = cursor.fetchone()
+        if mokinys:
+            print(mokinys)
+        else:
+            print("Mokinys nerastas.")
+    except sqlite3.Error as e:
+        print("Klaida ieškant mokinio:", e)
+
+@log_decorator
+def atnaujinti_mokinio_klase(id, nauja_klase):
+    try:
+        cursor.execute("UPDATE mokiniai SET klase = ? WHERE id = ?", (nauja_klase, id))
+        conn.commit()
+        print("Mokinys atnaujintas!")
+    except sqlite3.Error as e:
+        print("Klaida atnaujinant mokinį:", e)
+
+@log_decorator
+def pasalinti_mokini(id):
+    try:
+        cursor.execute("DELETE FROM mokiniai WHERE id = ?", (id,))
+        conn.commit()
+        print("Mokinys pašalintas!")
+    except sqlite3.Error as e:
+        print("Klaida šalinant mokinį:", e)
 
 class MokiniaiIteratorius:
     def __init__(self, mokiniai):
@@ -74,7 +114,13 @@ class MokiniaiIteratorius:
 
 prideti_mokini("Jonas", "Jonaitis", "10B", 8.5)
 prideti_mokini("Petras", "Petraitis", "9A", 7.2)
+prideti_mokytoja("Ona", "Onaitienė", "Matematika")
+
 rodyti_mokinius()
+
+ieskoti_mokinio("Jonas", "Jonaitis")
+atnaujinti_mokinio_klase(1, "11A")
+pasalinti_mokini(2)
 
 cursor.execute("SELECT * FROM mokiniai")
 mokiniu_sarasas = cursor.fetchall()
